@@ -1,0 +1,24 @@
+//
+//  PurchaseSettings.swift
+//  iOS-Demo
+//
+//  Created by jeanboy on 2017/12/7.
+//  Copyright © 2017年 jeanboy. All rights reserved.
+//
+
+import Foundation
+
+/*======================================内购============================================*/
+struct IAPPurchaseInfo {
+    // 产品ID
+    enum ProductID {
+        static let oneWeek = "com.uas.cleaner.oneWeek"
+    }
+    
+    // 验证密钥
+    static let secret = "****************************"
+    
+    static let defaultPrice = "$49.99"
+    
+    static let appName = AppInfo.appDisplayName
+}
