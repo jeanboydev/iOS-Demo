@@ -24,8 +24,9 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
             self.navigationController?.interactivePopGestureRecognizer!.delegate = self
             //解决自定义 leftBarButtonItem 并使用 webView 时，返回手势失效
             if webView != nil {
-//                self.delegate = self
-//                self.webView.addGestureRecognizer(tap)
+                let tap = UISwipeGestureRecognizer(target:self, action:nil)
+                tap.delegate = self
+                self.webView?.addGestureRecognizer(tap)
             }
         }
     }
@@ -91,10 +92,10 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         isHadLeftButton = true
     }
     //MARK:- 设置右边按钮
-    func setLeftButton(leftButton: UIButton){
+    func setLeftButton(rightButton: UIButton){
         rightButton.frame = CGRect(x: 0, y: 0, width: navigationBarHeight, height: navigationBarHeight)
         let rightButtonItem = UIBarButtonItem(customView: rightButton)
-        self.navigationItem.rightButtonItem = rightButtonItem
+        self.navigationItem.rightBarButtonItem = rightButtonItem
     }
     
     //MARK:- 状态栏白色(全局修改)
