@@ -12,34 +12,35 @@ import SnapKit
 
 class AboutWebViewViewController: BaseViewController {
     
-    var webView = WKWebView()
     
     var indicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     var urlString:String?
     var titleText:String?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(hexString: "FFFFFF")
         
+        webView = WKWebView()
         // 导航栏设置
-        navigationBar.backgroundColor = UIColor(hexString: "#679DFF")
-        navigationBar.titleLabel.text = titleText
-        navigationBar.leftButton.isHidden = true
-        navigationBar.rightButton.isHidden = false
-        navigationBar.rightButton.setImage(UIImage(named: "icon_close"), for: UIControlState.normal)
+//        navigationBar.backgroundColor = UIColor(hexString: "#679DFF")
+//        navigationBar.titleLabel.text = titleText
+//        navigationBar.leftButton.isHidden = true
+//        navigationBar.rightButton.isHidden = false
+//        navigationBar.rightButton.setImage(UIImage(named: "icon_close"), for: UIControlState.normal)
         
-        self.view.addSubview(webView)
-        webView.navigationDelegate = self
-        webView.snp.makeConstraints { (make) in
-            make.width.centerX.equalToSuperview()
-            make.height.equalToSuperview()
-            make.top.equalTo(navigationBar.snp.bottom)
-        }
+        self.view.addSubview(webView!)
+        webView?.navigationDelegate = self
+//        webView.snp.makeConstraints { (make) in
+//            make.width.centerX.equalToSuperview()
+//            make.height.equalToSuperview()
+//            make.top.equalTo(navigationBar.snp.bottom)
+//        }
         
         let url = URL.init(string: try urlString!)
-        webView.load(URLRequest.init(url: url!))
+        webView?.load(URLRequest.init(url: url!))
         
         
         //添加loading
@@ -53,9 +54,9 @@ class AboutWebViewViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func rightNavigationItemClick() {
-        dismiss(animated: true, completion: nil)
-    }
+//    override func doClose() {
+//        dismiss(animated: true, completion: nil)
+//    }
 }
 
 extension AboutWebViewViewController: WKNavigationDelegate {

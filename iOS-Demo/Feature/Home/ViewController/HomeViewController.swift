@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.brown
         
-        
+        self.navigationController?.isNavigationBarHidden = true
         
         let button = UIButton()
         button.setTitle("点击", for: UIControlState.normal)
@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
     
     @objc func doNext(){
         let homeController = HomeViewController()
+//        self.present(homeController, animated: true, completion: nil)
         self.navigationController?.pushViewController(homeController, animated: true)
     }
     
