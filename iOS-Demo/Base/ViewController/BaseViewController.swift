@@ -62,6 +62,27 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
 //    override var preferredStatusBarStyle: UIStatusBarStyle{
 //        return .lightContent
 //    }
+    
+    
+    //MARK:- 自定义返回按钮点击响应
+    func doBack(){
+        if let navigationController = navigationController {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    //MARK:- 自定义关闭按钮响应
+    func doClose(){
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func leftNavigationItemClick() {
+        if self.navigationController!.viewControllers.count > 1 {
+            doBack()
+        }
+    }
+    
+    func rightNavigationItemClick() {
+    }
 }
 
 extension BaseViewController {
@@ -89,23 +110,4 @@ extension BaseViewController {
         }
     }
     
-    func leftNavigationItemClick() {
-        if self.navigationController!.viewControllers.count > 1 {
-            doBack()
-        }
-    }
-    
-    func rightNavigationItemClick() {
-    }
-    
-    //MARK:- 自定义返回按钮点击响应
-    func doBack(){
-        if let navigationController = navigationController {
-            self.navigationController?.popViewController(animated: true)
-        }
-    }
-    //MARK:- 自定义关闭按钮响应
-    func doClose(){
-       dismiss(animated: true, completion: nil)
-    }
 }

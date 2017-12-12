@@ -18,17 +18,12 @@ class AboutSubscriptionViewController: BaseViewController {
         
         view.backgroundColor = UIColor(hexString: "FFFFFF")
         
-//        setNavigationBarBackgroundColor(color: UIColor(hexString: "#679DFF")!)
-//        setNavigationBarTitle(title: "About Subscription")
-//        let rightButton = UIButton()
-//        rightButton.setBackgroundImage(UIImage(named: "icon_close"), for: UIControlState.normal)
-//        setRightButton(rightButton: rightButton)
         // 导航栏设置
-//        navigationBar.backgroundColor = UIColor(hexString: "#679DFF")
-//        navigationBar.titleLabel.text = "About Subscription"
-//        navigationBar.leftButton.isHidden = true
-//        navigationBar.rightButton.isHidden = false
-//        navigationBar.rightButton.setImage(UIImage(named: "icon_close"), for: UIControlState.normal)
+        navigationBar.backgroundColor = UIColor(hexString: "#679DFF")
+        navigationBar.titleLabel.text = "About Subscription"
+        navigationBar.leftButton.isHidden = true
+        navigationBar.rightButton.isHidden = false
+        navigationBar.rightButton.setImage(UIImage(named: "icon_close"), for: UIControlState.normal)
         
         // text view
         textView = UITextView()
@@ -77,10 +72,10 @@ class AboutSubscriptionViewController: BaseViewController {
         // textView的scroll to top需此时调用才生效
         textView.scrollToTop(animated: false)
     }
-    
-//    override func doClose() {
-//        dismiss(animated: true, completion: nil)
-//    }
+   
+    override func rightNavigationItemClick() {
+        doClose()
+    }
     
 }
 

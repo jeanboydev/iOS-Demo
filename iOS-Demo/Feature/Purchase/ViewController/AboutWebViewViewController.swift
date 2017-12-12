@@ -25,19 +25,19 @@ class AboutWebViewViewController: BaseViewController {
         
         webView = WKWebView()
         // 导航栏设置
-//        navigationBar.backgroundColor = UIColor(hexString: "#679DFF")
-//        navigationBar.titleLabel.text = titleText
-//        navigationBar.leftButton.isHidden = true
-//        navigationBar.rightButton.isHidden = false
-//        navigationBar.rightButton.setImage(UIImage(named: "icon_close"), for: UIControlState.normal)
+        navigationBar.backgroundColor = UIColor(hexString: "#679DFF")
+        navigationBar.titleLabel.text = titleText
+        navigationBar.leftButton.isHidden = true
+        navigationBar.rightButton.isHidden = false
+        navigationBar.rightButton.setImage(UIImage(named: "icon_close"), for: UIControlState.normal)
         
         self.view.addSubview(webView!)
         webView?.navigationDelegate = self
-//        webView.snp.makeConstraints { (make) in
-//            make.width.centerX.equalToSuperview()
-//            make.height.equalToSuperview()
-//            make.top.equalTo(navigationBar.snp.bottom)
-//        }
+        webView?.snp.makeConstraints { (make) in
+            make.width.centerX.equalToSuperview()
+            make.height.equalToSuperview()
+            make.top.equalTo(navigationBar.snp.bottom)
+        }
         
         let url = URL.init(string: try urlString!)
         webView?.load(URLRequest.init(url: url!))
@@ -54,9 +54,9 @@ class AboutWebViewViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    override func doClose() {
-//        dismiss(animated: true, completion: nil)
-//    }
+    override func rightNavigationItemClick() {
+        doClose()
+    }
 }
 
 extension AboutWebViewViewController: WKNavigationDelegate {
