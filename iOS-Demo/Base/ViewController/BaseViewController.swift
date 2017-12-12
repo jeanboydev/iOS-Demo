@@ -89,13 +89,13 @@ extension BaseViewController {
         
         //自定义导航栏
         navigationBar = NavigationView()
-        navigationBar.backgroundColor = UIColor.clear
+        navigationBar.backgroundColor = UIColor.init(hexString: AppColor.navigationBar)
         navigationBar.titleLabel.text = ""
+        navigationBar.titleLabel.textColor = UIColor.init(hexString: AppColor.navigationBarText)
         self.view.addSubview(navigationBar)
         navigationBar.snp.makeConstraints { (make) in
-            make.width.centerX.equalToSuperview()
-            make.top.equalTo(headerSafeAreaHeight)
-            make.height.equalTo(headerBarHeight)
+            make.width.top.centerX.equalToSuperview()
+            make.height.equalTo(navigationBarHeight)
         }
         
         navigationBar.leftButton.isHidden = self.navigationController!.viewControllers.count <= 1

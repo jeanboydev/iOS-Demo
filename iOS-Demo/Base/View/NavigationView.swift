@@ -54,7 +54,7 @@ private extension NavigationView {
         leftButton.addTarget(self, action: #selector(buttonPressed(button:)), for: UIControlEvents.touchUpInside)
         addSubview(leftButton)
         leftButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self)
+            make.top.equalTo(self).offset(headerSafeAreaHeight)
             make.left.bottom.equalTo(self)
             make.width.equalTo(60.0)
         }
@@ -69,7 +69,7 @@ private extension NavigationView {
         
         titleLabel = UILabel()
         titleLabel.textAlignment = NSTextAlignment.center
-        titleLabel.textColor = UIColor(hexString: AppColor.navigationBar)
+        titleLabel.textColor = UIColor.white
         titleLabel.font = UIFont.systemFont(ofSize: 18)
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
