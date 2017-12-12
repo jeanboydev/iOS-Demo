@@ -16,15 +16,15 @@ class HomeViewController: BaseViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.brown
         
-        self.navigationController?.isNavigationBarHidden = true
+        navigationBar.titleLabel.text = "Home"
         
         let button = UIButton()
         button.setTitle("点击", for: UIControlState.normal)
         button.backgroundColor = UIColor.purple
-        self.view.addSubview(button)
+        self.rootView.addSubview(button)
         button.snp.makeConstraints { (make) in
             make.width.height.equalTo(100)
-            make.top.equalTo(navigationBarHeight)
+            make.top.equalTo(navigationBar.snp.bottom)
             make.centerX.equalToSuperview()
         }
         button.addTarget(self, action: #selector(doNext), for: UIControlEvents.touchUpInside)

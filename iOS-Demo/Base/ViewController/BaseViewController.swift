@@ -12,9 +12,11 @@ import SwiftyUserDefaults
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
    
+    
     var isHadLeftButton: Bool = true
     var webView: WKWebView?
     
+    var rootView:UIView!
     var navigationBar: NavigationView!
    
     override func viewDidLoad() {
@@ -50,11 +52,6 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         return true
     }
-
-    //MARK:- 设置导航栏是否显示
-    func setNavigationBarHidden(isHidden: Bool){
-        self.navigationController?.isNavigationBarHidden = isHidden
-    }
     
     //MARK:- 状态栏白色(全局修改)
 //    UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
@@ -66,7 +63,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //MARK:- 自定义返回按钮点击响应
     func doBack(){
-        if let navigationController = navigationController {
+        if self.navigationController != nil {
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -76,7 +73,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func leftNavigationItemClick() {
-        if self.navigationController!.viewControllers.count > 1 {
+        if self.navigationController?.viewControllers.count ?? 0 > 1 {
             doBack()
         }
     }
@@ -88,17 +85,30 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
 extension BaseViewController {
     
     private func initSubViews(){
+        //隐藏系统导航栏，使用自定义导航栏
+        self.navigationController?.isNavigationBarHidden = true
+        
+        //显示安全区域，自动适配 iPhoneX 头部和底部
+        rootView = UIView()
+        rootView.backgroundColor = UIColor.clear
+        view.addSubview(rootView)
+        rootView.snp.makeConstraints({ (make) in
+            make.width.centerX.equalToSuperview()
+            make.top.equalTo(headerSafeAreaHeight)
+            make.height.equalTo(screenHeight - headerSafeAreaHeight - footerSafeAreaHeight)
+        })
+        
+        //自定义导航栏
         navigationBar = NavigationView()
         navigationBar.backgroundColor = UIColor.clear
         navigationBar.titleLabel.text = ""
-        view.addSubview(navigationBar)
-        
+        rootView.addSubview(navigationBar)
         navigationBar.snp.makeConstraints { (make) in
-            make.left.right.equalTo(view).offset(0.0)
-            make.top.equalTo(view).offset(0.0)
-            make.height.equalTo(navigationBarHeight)
+            make.width.top.centerX.equalToSuperview()
+            make.height.equalTo(headerBarHeight)
         }
         
+        navigationBar.leftButton.isHidden = self.navigationController!.viewControllers.count <= 1
         navigationBar.leftButton.setImage(UIImage(named: "icon_back"), for: UIControlState.normal)
         
         navigationBar.leftButtonClick = { [weak self] in

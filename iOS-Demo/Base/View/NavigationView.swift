@@ -54,7 +54,7 @@ private extension NavigationView {
         leftButton.addTarget(self, action: #selector(buttonPressed(button:)), for: UIControlEvents.touchUpInside)
         addSubview(leftButton)
         leftButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self).offset(UIApplication.shared.statusBarFrame.height)
+            make.top.equalTo(self)
             make.left.bottom.equalTo(self)
             make.width.equalTo(60.0)
         }
