@@ -52,6 +52,11 @@ extension UIColor {
         let alphaString = String(Int(alpha * 255), radix: 16)
         self.init(hexString: hexString + alphaString)
     }
+    // 判断颜色深浅
+    public func isDark() -> Bool{
+        let value = 0.299 * self.red + 0.587 * self.green + 0.114 * self.blue
+        return value <= 0.75
+    }
 }
 /*======================================自定义字体============================================*/
 //MARK:- 自定义字体

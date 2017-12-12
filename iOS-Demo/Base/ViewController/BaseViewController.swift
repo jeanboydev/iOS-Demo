@@ -17,7 +17,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     var webView: WKWebView?
     
     var navigationBar: NavigationView!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,12 +53,12 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     //MARK:- 状态栏白色(全局修改)
-//    UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+//    UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+    
     //MARK:- 状态栏白色(局部修改)
 //    override var preferredStatusBarStyle: UIStatusBarStyle{
-//        return .lightContent
+//        return UIColor.init(hexString: navigationBarColor)!.isDark() ? .lightContent : .default
 //    }
-    
     
     //MARK:- 自定义返回按钮点击响应
     func doBack(){
@@ -84,13 +84,13 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
 extension BaseViewController {
     
     private func initSubViews(){
+        
         //隐藏系统导航栏，使用自定义导航栏
         self.navigationController?.isNavigationBarHidden = true
         
         //自定义导航栏
         navigationBar = NavigationView()
         navigationBar.backgroundColor = UIColor.init(hexString: AppColor.navigationBar)
-        navigationBar.titleLabel.text = ""
         navigationBar.titleLabel.textColor = UIColor.init(hexString: AppColor.navigationBarText)
         self.view.addSubview(navigationBar)
         navigationBar.snp.makeConstraints { (make) in
@@ -108,5 +108,6 @@ extension BaseViewController {
         navigationBar.rightButtonClick = {[weak self] in
             self?.rightNavigationItemClick()
         }
+        
     }
 }

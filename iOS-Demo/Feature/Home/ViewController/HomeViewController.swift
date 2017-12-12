@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +29,7 @@ class HomeViewController: BaseViewController {
         }
         button.addTarget(self, action: #selector(doNext), for: UIControlEvents.touchUpInside)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
