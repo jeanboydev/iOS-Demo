@@ -16,7 +16,6 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     var isHadLeftButton: Bool = true
     var webView: WKWebView?
     
-    var rootView:UIView!
     var navigationBar: NavigationView!
    
     override func viewDidLoad() {
@@ -88,23 +87,14 @@ extension BaseViewController {
         //隐藏系统导航栏，使用自定义导航栏
         self.navigationController?.isNavigationBarHidden = true
         
-        //显示安全区域，自动适配 iPhoneX 头部和底部
-        rootView = UIView()
-        rootView.backgroundColor = UIColor.clear
-        view.addSubview(rootView)
-        rootView.snp.makeConstraints({ (make) in
-            make.width.centerX.equalToSuperview()
-            make.top.equalTo(headerSafeAreaHeight)
-            make.height.equalTo(screenHeight - headerSafeAreaHeight - footerSafeAreaHeight)
-        })
-        
         //自定义导航栏
         navigationBar = NavigationView()
         navigationBar.backgroundColor = UIColor.clear
         navigationBar.titleLabel.text = ""
-        rootView.addSubview(navigationBar)
+        self.view.addSubview(navigationBar)
         navigationBar.snp.makeConstraints { (make) in
-            make.width.top.centerX.equalToSuperview()
+            make.width.centerX.equalToSuperview()
+            make.top.equalTo(headerSafeAreaHeight)
             make.height.equalTo(headerBarHeight)
         }
         
@@ -119,5 +109,4 @@ extension BaseViewController {
             self?.rightNavigationItemClick()
         }
     }
-    
 }

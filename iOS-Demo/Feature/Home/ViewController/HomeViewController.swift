@@ -21,7 +21,7 @@ class HomeViewController: BaseViewController {
         let button = UIButton()
         button.setTitle("点击", for: UIControlState.normal)
         button.backgroundColor = UIColor.purple
-        self.rootView.addSubview(button)
+        self.view.addSubview(button)
         button.snp.makeConstraints { (make) in
             make.width.height.equalTo(100)
             make.top.equalTo(navigationBar.snp.bottom)
