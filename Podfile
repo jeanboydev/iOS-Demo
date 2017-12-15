@@ -13,6 +13,8 @@ target 'iOS-Demo' do
   pod 'SnapKit'
   # UserDefaults 封装库
   pod 'SwiftyUserDefaults'
+  # Realm 数据库
+  pod 'RealmSwift'
   # 内购 封装库
   pod 'SwiftyStoreKit'
   # 网络框架

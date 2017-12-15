@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        application.statusBarStyle = .lightContent
 //        application.isStatusBarHidden = false
         
+        initDataBase()//初始化数据库配置
         initNetwork()//初始化网络配置
         initPurchase()//初始化内购
         initAnalysis(application, launchOptions: launchOptions)//初始化统计
@@ -28,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 extension AppDelegate {
+    
+    private func initDataBase(){
+        DataBaseManager.sharedManager.setup()
+    }
     
     private func initNetwork(){
         NetManager.shareInstance.baseURLString = ApiConfig.BaseURL

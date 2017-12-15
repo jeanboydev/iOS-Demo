@@ -1,6 +1,6 @@
 //
 //  NavigationView.swift
-//  Translate
+//  iOS-Demo
 //
 //  Created by jeanboy on 2017/11/9.
 //  Copyright © 2017年 fotoable. All rights reserved.

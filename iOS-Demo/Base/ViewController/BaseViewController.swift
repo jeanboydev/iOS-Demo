@@ -1,6 +1,6 @@
 //
 //  BaseViewController.swift
-//  SevenMinutes
+//  iOS-Demo
 //
 //  Created by jeanboy on 2017/11/8.
 //  Copyright © 2017年 jeanboy. All rights reserved.

@@ -28,6 +28,19 @@ class HomeViewController: BaseViewController {
             make.centerX.equalToSuperview()
         }
         button.addTarget(self, action: #selector(doNext), for: UIControlEvents.touchUpInside)
+        
+        
+        let shareButton = UIButton()
+        shareButton.backgroundColor = UIColor.darkGray
+        shareButton.setTitle("分享", for: UIControlState.normal)
+        shareButton.backgroundColor = UIColor.purple
+        self.view.addSubview(shareButton)
+        shareButton.snp.makeConstraints { (make) in
+            make.width.height.equalTo(100)
+            make.top.equalTo(button.snp.bottom).offset(50)
+            make.centerX.equalToSuperview()
+        }
+        shareButton.addTarget(self, action: #selector(doShare), for: UIControlEvents.touchUpInside)
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,6 +52,14 @@ class HomeViewController: BaseViewController {
         let homeController = HomeViewController()
 //        self.present(homeController, animated: true, completion: nil)
         self.navigationController?.pushViewController(homeController, animated: true)
+    }
+    
+    @objc func doShare(){
+        let shareImage1 = UIImage.init(named: "image1", ofType: "jpg")
+        let shareImage2 = UIImage.init(named: "image2", ofType: "jpg")
+        let itemArray = [shareImage1, shareImage2]
+        let activityController = UIActivityViewController.init(activityItems: itemArray, applicationActivities: nil)
+        self.present(activityController, animated: true, completion: nil)
     }
     
 }

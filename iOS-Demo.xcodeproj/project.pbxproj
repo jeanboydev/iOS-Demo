@@ -26,7 +26,11 @@
 		5854B0C11FD9166D000D832B /* AboutSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0BF1FD9166D000D832B /* AboutSubscriptionViewController.swift */; };
 		5854B0C31FD916AA000D832B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0C21FD916AA000D832B /* BaseViewController.swift */; };
 		5854B0C81FD916FA000D832B /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0C71FD916FA000D832B /* NavigationView.swift */; };
-		586605511FCD590C0085BFEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586605501FCD590C0085BFEB /* AppDelegate.swift */; };
+		585C8B151FE37C240031D1F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585C8B141FE37C240031D1F7 /* AppDelegate.swift */; };
+		5863C9D51FE286510030D809 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5863C9D41FE286510030D809 /* DataBaseManager.swift */; };
+		5863C9D71FE288280030D809 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5863C9D61FE288280030D809 /* UserModel.swift */; };
+		5863C9DA1FE2A2570030D809 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5863C9D81FE2A2570030D809 /* image1.jpg */; };
+		5863C9DB1FE2A2570030D809 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5863C9D91FE2A2570030D809 /* image2.jpg */; };
 		586605531FCD590C0085BFEB /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586605521FCD590C0085BFEB /* NavigationViewController.swift */; };
 		586605561FCD590C0085BFEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586605541FCD590C0085BFEB /* Main.storyboard */; };
 		586605581FCD590C0085BFEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586605571FCD590C0085BFEB /* Assets.xcassets */; };
@@ -74,8 +78,12 @@
 		5854B0BF1FD9166D000D832B /* AboutSubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutSubscriptionViewController.swift; sourceTree = "<group>"; };
 		5854B0C21FD916AA000D832B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5854B0C71FD916FA000D832B /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		585C8B141FE37C240031D1F7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5863C9D41FE286510030D809 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		5863C9D61FE288280030D809 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5863C9D81FE2A2570030D809 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
+		5863C9D91FE2A2570030D809 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
 		5866054D1FCD590C0085BFEB /* iOS-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		586605501FCD590C0085BFEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		586605521FCD590C0085BFEB /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		586605551FCD590C0085BFEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		586605571FCD590C0085BFEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +166,8 @@
 		580C2BA91FD8E188003C1DAB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5863C9D81FE2A2570030D809 /* image1.jpg */,
+				5863C9D91FE2A2570030D809 /* image2.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -181,10 +191,10 @@
 		580C2BAC1FD8E1E5003C1DAB /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				585C8B141FE37C240031D1F7 /* AppDelegate.swift */,
 				5854B0C61FD916EC000D832B /* View */,
 				5854B0C51FD916D5000D832B /* ViewController */,
 				5854B0C41FD916C3000D832B /* storyboard */,
-				586605501FCD590C0085BFEB /* AppDelegate.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -280,15 +290,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5863C9D21FE285E70030D809 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5863C9D31FE286180030D809 /* Model */,
+				5863C9D41FE286510030D809 /* DataBaseManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5863C9D31FE286180030D809 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5863C9D61FE288280030D809 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		586605441FCD590C0085BFEB = {
 			isa = PBXGroup;
 			children = (
+				23C4D5452AF44AC4EA47FC95 /* Frameworks */,
 				5866054F1FCD590C0085BFEB /* iOS-Demo */,
 				586605641FCD590C0085BFEB /* iOS-DemoTests */,
 				5866056F1FCD590C0085BFEB /* iOS-DemoUITests */,
-				5866054E1FCD590C0085BFEB /* Products */,
 				D00757FB77F10D5B1D13AE18 /* Pods */,
-				23C4D5452AF44AC4EA47FC95 /* Frameworks */,
+				5866054E1FCD590C0085BFEB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -309,6 +336,7 @@
 				586605571FCD590C0085BFEB /* Assets.xcassets */,
 				580C2BAC1FD8E1E5003C1DAB /* Base */,
 				580C2BC71FD8ED05003C1DAB /* Config */,
+				5863C9D21FE285E70030D809 /* Data */,
 				580C2BC61FD8EBB9003C1DAB /* Feature */,
 				580C2BA11FD8E0CB003C1DAB /* Public */,
 				580C2BA91FD8E188003C1DAB /* Resources */,
@@ -463,7 +491,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5863C9DA1FE2A2570030D809 /* image1.jpg in Resources */,
 				5866055B1FCD590C0085BFEB /* LaunchScreen.storyboard in Resources */,
+				5863C9DB1FE2A2570030D809 /* image2.jpg in Resources */,
 				586605581FCD590C0085BFEB /* Assets.xcassets in Resources */,
 				586605561FCD590C0085BFEB /* Main.storyboard in Resources */,
 			);
@@ -631,6 +661,8 @@
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/LCProgressHUD/LCProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
@@ -650,6 +682,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LCProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
@@ -674,20 +708,22 @@
 				580C2BCF1FD8EFB3003C1DAB /* AnalysisConfig.swift in Sources */,
 				5854B0C81FD916FA000D832B /* NavigationView.swift in Sources */,
 				5854B0B81FD8F946000D832B /* AppInfo.swift in Sources */,
+				5863C9D51FE286510030D809 /* DataBaseManager.swift in Sources */,
 				580C2BB31FD8E85C003C1DAB /* HomeViewController.swift in Sources */,
 				5854B0C31FD916AA000D832B /* BaseViewController.swift in Sources */,
 				580C2BC31FD8EAA2003C1DAB /* LaunchViewController.swift in Sources */,
 				5854B0B41FD8F4F8000D832B /* NetManager.swift in Sources */,
 				5854B0B21FD8F453000D832B /* AnalysisUtil.swift in Sources */,
+				5863C9D71FE288280030D809 /* UserModel.swift in Sources */,
 				5854B0C11FD9166D000D832B /* AboutSubscriptionViewController.swift in Sources */,
 				5854B0BD1FD9134A000D832B /* SubscriptionViewModel.swift in Sources */,
+				585C8B151FE37C240031D1F7 /* AppDelegate.swift in Sources */,
 				580C2BC91FD8ED18003C1DAB /* AppSettings.swift in Sources */,
 				586605531FCD590C0085BFEB /* NavigationViewController.swift in Sources */,
 				5854B0C01FD9166D000D832B /* AboutWebViewViewController.swift in Sources */,
 				580C2BD21FD8F0CA003C1DAB /* CommonDefine.swift in Sources */,
 				580C2BA81FD8E17F003C1DAB /* ScreenUtil.swift in Sources */,
 				580C2BA61FD8E12D003C1DAB /* JSONUtil.swift in Sources */,
-				586605511FCD590C0085BFEB /* AppDelegate.swift in Sources */,
 				580C2BCB1FD8EDB1003C1DAB /* ApiConfig.swift in Sources */,
 				580C2BCD1FD8EF1D003C1DAB /* IAPPurchaseInfo.swift in Sources */,
 			);
@@ -859,6 +895,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZLNK3Y7Q3A;
 				INFOPLIST_FILE = "iOS-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jeanboy.app.iOS-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -875,6 +912,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZLNK3Y7Q3A;
 				INFOPLIST_FILE = "iOS-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jeanboy.app.iOS-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
