@@ -11,8 +11,11 @@ import UIKit
 class HomeViewController: BaseViewController {
     
     override func initSubViews() {
+        super.initSubViews()
         
         //TODO: do something...
+        self.view.backgroundColor = UIColor.blue
+        
     }
     
 }

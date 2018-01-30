@@ -53,16 +53,16 @@ extension AppDelegate {
     /// 初始化统计
     ///
     /// - Parameters:
-    ///   - application: <#application description#>
-    ///   - launchOptions: <#launchOptions description#>
+    ///   - application:
+    ///   - launchOptions:
     private func initAnalysis(_ application: UIApplication, launchOptions: [UIApplicationLaunchOptionsKey: Any]?){
         
-        AnalysisTool.shared.appsFlyerEnabled = false
-        AnalysisTool.shared.firebaseEnabled = false
-        AnalysisTool.shared.flurryEnabled = false
-        AnalysisTool.shared.fbNormalEventEnabled = false
-        AnalysisTool.shared.fbSystemEventEnabled = true
-        AnalysisTool.shared.setup(withApplication: application, withLaunchOptions: launchOptions, flurryKey: AnalysisConfig.flurryKey, appsFlyerKey: AnalysisConfig.appsFlyerID, appleAppID: AnalysisConfig.appleAppID, logEnabled: AnalysisConfig.logEnabled)
+//        AnalysisTool.shared.appsFlyerEnabled = false
+//        AnalysisTool.shared.firebaseEnabled = false
+//        AnalysisTool.shared.flurryEnabled = false
+//        AnalysisTool.shared.fbNormalEventEnabled = false
+//        AnalysisTool.shared.fbSystemEventEnabled = true
+//        AnalysisTool.shared.setup(withApplication: application, withLaunchOptions: launchOptions, flurryKey: AnalysisConfig.flurryKey, appsFlyerKey: AnalysisConfig.appsFlyerID, appleAppID: AnalysisConfig.appleAppID, logEnabled: AnalysisConfig.logEnabled)
     }
     
     /// 初始化主页面
@@ -70,8 +70,10 @@ extension AppDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         
-        let homeViewController = HomeViewController()
-        let navigationController = UINavigationController.init(rootViewController: homeViewController)
+        let launchViewController = LaunchViewController()
+        let navigationController = UINavigationController.init(rootViewController: launchViewController)
+//        let homeViewController = HomeViewController()
+//        let navigationController = UINavigationController.init(rootViewController: homeViewController)
 //        navigationController.setNavigationBarHidden(true, animated: false)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

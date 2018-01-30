@@ -93,4 +93,15 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         
         self.view.backgroundColor = UIColor.init(hexString: AppColor.background)
     }
+    
+    /// 延迟操作
+    ///
+    /// - Parameters:
+    ///   - delayTime: 延迟时间 秒
+    ///   - onAction: 执行操作
+    func delayAction(delayTime: TimeInterval, onAction: @escaping (() -> Void)) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delayTime) {
+            onAction()
+        }
+    }
 }

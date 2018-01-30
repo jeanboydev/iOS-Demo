@@ -8,28 +8,21 @@
 
 import UIKit
 
-class LaunchViewController: UIViewController {
+class LaunchViewController: BaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func initSubViews() {
+        super.initSubViews()
+        
+        //TODO: do something...
+        self.view.backgroundColor = UIColor.brown
+        
+        delayAction(delayTime: 3.0) {
+            let homeController = HomeViewController()
+            let navigationController = UINavigationController.init(rootViewController: homeController)
+            navigationController.setNavigationBarHidden(true, animated: true)
+            UIApplication.shared.keyWindow?.rootViewController = navigationController
+            UIApplication.shared.keyWindow?.makeKeyAndVisible()
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

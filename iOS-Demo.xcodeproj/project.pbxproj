@@ -269,6 +269,7 @@
 				5854B0B11FD8F453000D832B /* AnalysisTool.swift */,
 				5854B0B51FD8F559000D832B /* IAPManager.swift */,
 				5854B0B31FD8F4F8000D832B /* NetManager.swift */,
+				5863C9D41FE286510030D809 /* DataBaseManager.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -343,7 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				5863C9D31FE286180030D809 /* Model */,
-				5863C9D41FE286510030D809 /* DataBaseManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
