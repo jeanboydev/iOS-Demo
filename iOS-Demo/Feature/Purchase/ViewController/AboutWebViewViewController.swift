@@ -1,6 +1,5 @@
 //
 //  AboutWebViewViewController.swift
-//  PhoneClear
 //
 //  Created by jeanboy on 2017/12/5.
 //  Copyright © 2017年 jeanboy. All rights reserved.
@@ -10,7 +9,7 @@ import UIKit
 import WebKit
 import SnapKit
 
-class AboutWebViewViewController: BaseViewController {
+class AboutWebViewViewController: BaseNavigationViewController {
     
     
     var indicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)

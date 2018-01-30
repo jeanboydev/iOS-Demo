@@ -1,6 +1,5 @@
 //
 //  BaseViewController.swift
-//  iOS-Demo
 //
 //  Created by jeanboy on 2017/11/8.
 //  Copyright © 2017年 jeanboy. All rights reserved.
@@ -16,16 +15,15 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     var isHadLeftButton: Bool = true
     var webView: WKWebView?
     
-    var navigationBar: NavigationView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.initSubViews()
     }
     
-    
-    //MARK:- 解决自定义 leftBarButtonItem 时，返回手势失效
+    /// 解决自定义 leftBarButtonItem 时，返回手势失效
+    ///
+    /// - Parameter animated: 
     override func viewDidAppear(_ animated: Bool) {
         if isHadLeftButton {
             self.navigationController?.interactivePopGestureRecognizer!.delegate = self
@@ -37,13 +35,23 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
             }
         }
     }
-    //MARK:- 解决自定义 leftBarButtonItem 时，返回手势失效，webView 手势处理
+    
+    /// 解决自定义 leftBarButtonItem 时，返回手势失效，webView 手势处理
+    ///
+    /// - Parameters:
+    ///   - gestureRecognizer:
+    ///   - otherGestureRecognizer:
+    /// - Returns:
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                            shouldRecognizeSimultaneouslyWith otherGestureRecognizer:
         UIGestureRecognizer) -> Bool {
         return true
     }
-    //MARK:- 解决自定义 leftBarButtonItem 时，返回手势失效，手势处理
+    
+    /// 解决自定义 leftBarButtonItem 时，返回手势失效，手势处理
+    ///
+    /// - Parameter gestureRecognizer:
+    /// - Returns:
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if (gestureRecognizer == self.navigationController?.interactivePopGestureRecognizer) {
             //只有二级以及以下的页面允许手势返回
@@ -60,54 +68,29 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
 //        return UIColor.init(hexString: navigationBarColor)!.isDark() ? .lightContent : .default
 //    }
     
-    //MARK:- 自定义返回按钮点击响应
+    /// 状态栏白色(局部修改)
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
+    /// 自定义返回按钮点击响应
     func doBack(){
         if self.navigationController != nil {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    //MARK:- 自定义关闭按钮响应
+    
+    /// 自定义关闭按钮响应
     func doClose(){
         dismiss(animated: true, completion: nil)
     }
     
-    func leftNavigationItemClick() {
-        if self.navigationController?.viewControllers.count ?? 0 > 1 {
-            doBack()
-        }
-    }
-    
-    func rightNavigationItemClick() {
-    }
-}
-
-extension BaseViewController {
-    
-    private func initSubViews(){
+    /// 初始化 View
+    func initSubViews(){
         
         //隐藏系统导航栏，使用自定义导航栏
         self.navigationController?.isNavigationBarHidden = true
         
-        //自定义导航栏
-        navigationBar = NavigationView()
-        navigationBar.backgroundColor = UIColor.init(hexString: AppColor.navigationBar)
-        navigationBar.titleLabel.textColor = UIColor.init(hexString: AppColor.navigationBarText)
-        self.view.addSubview(navigationBar)
-        navigationBar.snp.makeConstraints { (make) in
-            make.width.top.centerX.equalToSuperview()
-            make.height.equalTo(navigationBarHeight)
-        }
-        
-        navigationBar.leftButton.isHidden = self.navigationController!.viewControllers.count <= 1
-        navigationBar.leftButton.setImage(UIImage(named: "icon_back"), for: UIControlState.normal)
-        
-        navigationBar.leftButtonClick = { [weak self] in
-            self?.leftNavigationItemClick()
-        }
-        
-        navigationBar.rightButtonClick = {[weak self] in
-            self?.rightNavigationItemClick()
-        }
-        
+        self.view.backgroundColor = UIColor.init(hexString: AppColor.background)
     }
 }

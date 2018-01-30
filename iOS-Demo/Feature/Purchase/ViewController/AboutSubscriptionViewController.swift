@@ -1,6 +1,5 @@
 //
 //  AboutSubscriptionViewController.swift
-//  SevenMinutes
 //
 //  Created by jeanboy on 2017/11/14.
 //  Copyright © 2017年 jeanboy. All rights reserved.
@@ -9,7 +8,7 @@
 import UIKit
 import SwiftyUserDefaults
 
-class AboutSubscriptionViewController: BaseViewController {
+class AboutSubscriptionViewController: BaseNavigationViewController {
     
     var textView: UITextView!
     
@@ -37,7 +36,7 @@ class AboutSubscriptionViewController: BaseViewController {
         textView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10.0)
             make.right.equalToSuperview().offset(-10.0)
-            make.top.equalTo(navigationBarHeight)
+            make.top.equalTo(UIScreen.navigationBarHeight)
             make.bottom.equalToSuperview()
         }
         

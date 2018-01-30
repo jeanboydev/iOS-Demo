@@ -1,6 +1,5 @@
 //
 //  DataBaseManager.swift
-//  iOS-Demo
 //
 //  Created by jeanboy on 2017/12/14.
 //  Copyright © 2017年 jeanboy. All rights reserved.
@@ -15,14 +14,17 @@ class DataBaseManager {
     private static let schemaVersion: UInt64 = 0
     
     //单例
-    static let sharedManager: DataBaseManager = DataBaseManager()
+    static let shared: DataBaseManager = DataBaseManager()
     
     // 私有化构造函数
     private init() {
     }
     
     func setup(){
-        let config = Realm.Configuration(schemaVersion: DataBaseManager.schemaVersion, migrationBlock: { migration, oldSchemaVersion in
+        var documentsURL = FolderUtil.getDocumentURL(path: AppFolder.database)
+        documentsURL.appendPathComponent("default.realm", isDirectory: false)
+        
+        let config = Realm.Configuration(fileURL: documentsURL, schemaVersion: DataBaseManager.schemaVersion, migrationBlock: { migration, oldSchemaVersion in
             //什么都不要做！Realm 会自行检测新增和需要移除的属性，然后自动更新硬盘上的数据库架构
             if (oldSchemaVersion < DataBaseManager.schemaVersion) {
                 
@@ -40,50 +42,93 @@ class DataBaseManager {
     
     private lazy var realm = try! Realm()
     
-    //MARK:- 添加数据
+    ///
+    /// 添加数据
+    ///
+    /// - Parameter object: Element
     func add(object: Object){
         try! realm.write {
             realm.add(object)
         }
     }
-    //MARK:- 添加多条数据
+    
+    /// 添加多条数据
+    ///
+    /// - Parameter objects: List<Element>
     func add<Element: Object>(objects: List<Element>){
         try! realm.write {
             realm.add(objects)
         }
     }
-    //MARK:- 删除数据
+    
+    /// 在事务中添加
+    ///
+    /// - Parameter object: Element
+    func addInTransaction(object: Object){
+        realm.add(object)
+    }
+    
+    /// 在事务中添加多条数据
+    ///
+    /// - Parameter objects: List<Element>
+    func addInTransaction<Element: Object>(objects: List<Element>){
+        realm.add(objects)
+    }
+    
+    /// 删除数据
+    ///
+    /// - Parameter object: Element
     func delete(object: Object){
         try! realm.write {
             realm.delete(object)
         }
     }
-    //MARK:- 删除多条数据
+    
+    /// 删除多条数据
+    ///
+    /// - Parameter objects: List<Element>
     func delete<Element: Object>(objects: List<Element>){
         try! realm.write {
             realm.delete(objects)
         }
     }
-    //MARK:- 删除数据库中所有数据
+    
+    /// 删除数据库中所有数据
     func clear(){
         try! realm.write {
             realm.deleteAll()
         }
     }
-    //MARK:- 修改数据
+    
+    /// 修改数据
+    ///
+    /// - Parameters:
+    ///   - object: Element
+    ///   - onUpdate: 更新回调处理
     func update<Element: Object>(object: Element, onUpdate: (_ obj: Element) -> ()){
         try! realm.write {
             onUpdate(object)
         }
     }
-    //MARK:- 查询所有数据
+    
+    /// 查询所有数据
+    ///
+    /// - Parameters:
+    ///   - type: Element.Type
+    ///   - onResult: 查询结果回调
     func getAll<Element: Object>(type: Element.Type, onResult: (_ results:Results<Element>) -> ()){
         try! realm.write {
             //realm.objects(type).filter().sorted(byKeyPath: "name", ascending: false)//可以按条件筛选
             onResult(realm.objects(type))
         }
     }
-    //MARK:- 根据主键查询数据
+    
+    /// 根据主键查询数据
+    ///
+    /// - Parameters:
+    ///   - type: Element.Type
+    ///   - key: key
+    ///   - onResult: 查询结果回调
     func getByPrimaryKey<Element: Object>(type: Element.Type, key:String, onResult: (_ result:Element?) -> ()){
         try! realm.write {
             onResult(realm.object(ofType: type, forPrimaryKey: key))

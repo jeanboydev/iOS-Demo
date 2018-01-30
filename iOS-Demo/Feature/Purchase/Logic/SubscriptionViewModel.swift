@@ -1,6 +1,5 @@
 //
 //  LaunchViewModel.swift
-//  SevenMinutes
 //
 //  Created by jeanboy on 2017/11/7.
 //  Copyright © 2017年 jeanboy. All rights reserved.
@@ -14,25 +13,28 @@ class SubscriptionViewModel {
     private var resultCount = 0
     private var successCount = 0
     
+    /// 与服务器同步状态
+    ///
+    /// - Parameter completion: <#completion description#>
     func syncWithServer(completion: @escaping (_ code: FinishCode) -> Void) {
         
         if Defaults[.isVIP] {
             // 当前是VIP状态， 需验证VIP有效性
             if Defaults[.subscriptionExprireDate] < Date().timeIntervalSince1970 {
                 // 根据本地时间判断已过期, restore
-                DLog("restore...")
+                debugPrint("restore...")
                 IAPManager.shareInstance.restore(productID: IAPPurchaseInfo.ProductID.oneWeek, completion: { [weak self] (result) in
                     self?.resultCount += 1
                     self?.successCount += 1
                     
                     switch result {
                     case .success(let expireDate):
-                        DLog("restore success, expireDate=\(expireDate)")
+                        debugPrint("restore success, expireDate=\(expireDate)")
                         Defaults[.isVIP] = true
                         Defaults[.subscriptionExprireDate] = expireDate.timeIntervalSince1970
                         break
                     default:
-                        DLog("restore fail")
+                        debugPrint("restore fail")
                         Defaults[.isVIP] = false
                     }
                     
@@ -66,7 +68,10 @@ class SubscriptionViewModel {
         }
     }
     
-    // 获取setting
+    
+    /// 获取settings
+    ///
+    /// - Parameter completion:
     func getSettingsFromServer(completion: @escaping (_ code: FinishCode) -> Void) {
         
         let parameters = ["versionCode": ApiConfig.VersionCode, "packageName": Bundle.main.bundleIdentifier!];

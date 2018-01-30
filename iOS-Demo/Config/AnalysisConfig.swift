@@ -1,6 +1,5 @@
 //
 //  AnalysisSettings.swift
-//  iOS-Demo
 //
 //  Created by jeanboy on 2017/12/7.
 //  Copyright © 2017年 jeanboy. All rights reserved.
@@ -16,7 +15,7 @@ enum AnalysisConfig {
     static let appsFlyerID = "****************"
     static let appleAppID = "****************"
     
-    //设置 debug 时是否开启
+    /// 设置 debug 时是否开启事件统计
     #if DEBUG
     static let logEnabled = true
     #else

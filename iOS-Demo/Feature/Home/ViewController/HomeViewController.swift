@@ -10,56 +10,9 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.brown
+    override func initSubViews() {
         
-        navigationBar.titleLabel.text = "Home"
-        
-        let button = UIButton()
-        button.setTitle("点击", for: UIControlState.normal)
-        button.backgroundColor = UIColor.purple
-        self.view.addSubview(button)
-        button.snp.makeConstraints { (make) in
-            make.width.height.equalTo(100)
-            make.top.equalTo(navigationBar.snp.bottom)
-            make.centerX.equalToSuperview()
-        }
-        button.addTarget(self, action: #selector(doNext), for: UIControlEvents.touchUpInside)
-        
-        
-        let shareButton = UIButton()
-        shareButton.backgroundColor = UIColor.darkGray
-        shareButton.setTitle("分享", for: UIControlState.normal)
-        shareButton.backgroundColor = UIColor.purple
-        self.view.addSubview(shareButton)
-        shareButton.snp.makeConstraints { (make) in
-            make.width.height.equalTo(100)
-            make.top.equalTo(button.snp.bottom).offset(50)
-            make.centerX.equalToSuperview()
-        }
-        shareButton.addTarget(self, action: #selector(doShare), for: UIControlEvents.touchUpInside)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @objc func doNext(){
-        let homeController = HomeViewController()
-//        self.present(homeController, animated: true, completion: nil)
-        self.navigationController?.pushViewController(homeController, animated: true)
-    }
-    
-    @objc func doShare(){
-        let shareImage1 = UIImage.init(named: "image1", ofType: "jpg")
-        let shareImage2 = UIImage.init(named: "image2", ofType: "jpg")
-        let itemArray = [shareImage1, shareImage2]
-        let activityController = UIActivityViewController.init(activityItems: itemArray, applicationActivities: nil)
-        self.present(activityController, animated: true, completion: nil)
+        //TODO: do something...
     }
     
 }

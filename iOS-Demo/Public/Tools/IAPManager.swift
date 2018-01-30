@@ -1,6 +1,5 @@
 //
 //  IAPManager.swift
-//  FotoableProject
 //
 //  Created by jeanboy on 2017/11/6.
 //  Copyright © 2017年 jeanboy. All rights reserved.
@@ -10,28 +9,28 @@ import Foundation
 import SwiftyStoreKit
 import StoreKit
 
-typealias PurchaseCompletion = (_ result: IAPPurchaseResult) -> Void
-typealias RestoreCompletion = (_ result: IAPRestoreResult) -> Void
-typealias VerifyCompletion = (_ result: IAPVerifyResult) -> Void
+public typealias PurchaseCompletion = (_ result: IAPPurchaseResult) -> Void
+public typealias RestoreCompletion = (_ result: IAPRestoreResult) -> Void
+public typealias VerifyCompletion = (_ result: IAPVerifyResult) -> Void
 
-// purchase结果
-enum IAPPurchaseResult {
+/// purchase结果
+public enum IAPPurchaseResult {
     case success(product: SKProduct, expireDate: Date)
     case canceled
     case purchaseFail
     case verifyFail(product: SKProduct)
 }
 
-// restore结果
-enum IAPRestoreResult {
+/// restore结果
+public enum IAPRestoreResult {
     case success(expireDate: Date)
     case expired
     case fail
     case nothing
 }
 
-// verify结果
-enum IAPVerifyResult {
+/// verify结果
+public enum IAPVerifyResult {
     case success(expireDate: Date)
     case expired
     case notPurchased
@@ -39,19 +38,18 @@ enum IAPVerifyResult {
     case fail
 }
 
-class IAPManager: NSObject {
+public class IAPManager: NSObject {
     
-    var secret:String = ""     // 验证密钥
+    /// 验证密钥
+    public var secret = ""
     
-    static let shareInstance = IAPManager()
+    public static let shareInstance = IAPManager()
     private override init() {}
 }
 
-extension IAPManager  {
+public extension IAPManager  {
     
-    /**
-     结束未完成的购买，每次启动时要在didFinishLaunchingWithOptions里调用
-     */
+    /// 结束未完成的购买，每次启动时要在didFinishLaunchingWithOptions里调用
     func completeTransaction() {
         
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
@@ -65,22 +63,22 @@ extension IAPManager  {
         }
     }
     
-    /**
-     根据商品ID得到商品信息
-     
-     @param productIDs 商品ID
-     */
-    func retriveProductsInfo(productIDs: Set<String>) {
+    /// 根据商品ID得到商品信息
+    ///
+    /// - Parameters:
+    ///   - productIDs: 商品ID
+    ///   - completion: 获取完成后的回调
+    func retriveProductsInfo(productIDs: Set<String>, completion: @escaping (_ result: RetrieveResults) -> Void) {
         SwiftyStoreKit.retrieveProductsInfo(productIDs) { result in
+            completion(result)
         }
     }
     
-    /**
-     购买商品
-     
-     @param productID 商品ID
-     @param completion 购买结束后的回调
-     */
+    /// 购买商品
+    ///
+    /// - Parameters:
+    ///   - productID: 商品ID
+    ///   - completion: 购买结束后的回调
     func purchaseAutoRenewable(productID: String, completion: @escaping PurchaseCompletion) {
         
         SwiftyStoreKit.purchaseProduct(productID, atomically: true) { [weak self] result in
@@ -105,7 +103,6 @@ extension IAPManager  {
                 })
             } else  {
                 if case .error(let error) = result {
-                    DLog(error)
                     switch error.code {
                     case .paymentCancelled:
                         completion(IAPPurchaseResult.canceled)
@@ -119,12 +116,11 @@ extension IAPManager  {
         }
     }
     
-    /**
-     恢复商品
-     
-     @param productID 商品ID
-     @param completion 恢复结束后的回调
-     */
+    /// 恢复商品
+    ///
+    /// - Parameters:
+    ///   - productID: 商品ID
+    ///   - completion: 恢复结束后的回调
     func restore(productID: String, completion: @escaping RestoreCompletion) {
         SwiftyStoreKit.restorePurchases(atomically: true) { [weak self] results in
             if results.restoreFailedPurchases.count > 0 {
@@ -147,12 +143,11 @@ extension IAPManager  {
         }
     }
     
-    /**
-     验证票据
-     
-     @param productID 商品ID
-     @param completion 验证结束后的回调
-     */
+    /// 验证票据
+    ///
+    /// - Parameters:
+    ///   - productID: 商品ID
+    ///   - completion: 验证结束后的回调
     func verifyAutoRenewable(productID: String, completion: @escaping VerifyCompletion) {
         let appleValidator = AppleReceiptValidator(service: .production, sharedSecret: self.secret)
         SwiftyStoreKit.verifyReceipt(using: appleValidator) { result in

@@ -1,9 +1,8 @@
 //
 //  NavigationView.swift
-//  iOS-Demo
 //
 //  Created by jeanboy on 2017/11/9.
-//  Copyright © 2017年 fotoable. All rights reserved.
+//  Copyright © 2017年 jeanboy. All rights reserved.
 //
 
 import UIKit
@@ -54,7 +53,7 @@ private extension NavigationView {
         leftButton.addTarget(self, action: #selector(buttonPressed(button:)), for: UIControlEvents.touchUpInside)
         addSubview(leftButton)
         leftButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self).offset(headerSafeAreaHeight)
+            make.top.equalTo(self).offset(UIScreen.headerSafeAreaHeight)
             make.left.bottom.equalTo(self)
             make.width.equalTo(60.0)
         }

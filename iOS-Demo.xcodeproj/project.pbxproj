@@ -9,29 +9,40 @@
 /* Begin PBXBuildFile section */
 		4A4A9710748121B4F6A7AB71 /* Pods_iOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FF7F3FCBC487308869F3EB /* Pods_iOS_Demo.framework */; };
 		580C2BA61FD8E12D003C1DAB /* JSONUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BA51FD8E12D003C1DAB /* JSONUtil.swift */; };
-		580C2BA81FD8E17F003C1DAB /* ScreenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BA71FD8E17F003C1DAB /* ScreenUtil.swift */; };
 		580C2BB31FD8E85C003C1DAB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BB21FD8E85C003C1DAB /* HomeViewController.swift */; };
 		580C2BC31FD8EAA2003C1DAB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BC21FD8EAA2003C1DAB /* LaunchViewController.swift */; };
 		580C2BC91FD8ED18003C1DAB /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BC81FD8ED18003C1DAB /* AppSettings.swift */; };
 		580C2BCB1FD8EDB1003C1DAB /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BCA1FD8EDB1003C1DAB /* ApiConfig.swift */; };
 		580C2BCD1FD8EF1D003C1DAB /* IAPPurchaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BCC1FD8EF1D003C1DAB /* IAPPurchaseInfo.swift */; };
 		580C2BCF1FD8EFB3003C1DAB /* AnalysisConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BCE1FD8EFB3003C1DAB /* AnalysisConfig.swift */; };
-		580C2BD21FD8F0CA003C1DAB /* CommonDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BD11FD8F0CA003C1DAB /* CommonDefine.swift */; };
-		5854B0B21FD8F453000D832B /* AnalysisUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0B11FD8F453000D832B /* AnalysisUtil.swift */; };
+		580C2BD21FD8F0CA003C1DAB /* AppDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BD11FD8F0CA003C1DAB /* AppDefine.swift */; };
+		582846FA20201B40008BD34C /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582846F920201B40008BD34C /* BaseNavigationViewController.swift */; };
+		582846FC20201E09008BD34C /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582846FB20201E09008BD34C /* DateUtil.swift */; };
+		582846FE20201E86008BD34C /* ImagePickerTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582846FD20201E86008BD34C /* ImagePickerTool.swift */; };
+		5828470120204634008BD34C /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828470020204634008BD34C /* AppInfo.swift */; };
+		582847032020463A008BD34C /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582847022020463A008BD34C /* DeviceInfo.swift */; };
+		58284707202049F2008BD34C /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58284706202049F2008BD34C /* UIDevice+Extension.swift */; };
+		5828470920204F8A008BD34C /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828470820204F8A008BD34C /* UIScreen+Extension.swift */; };
+		5828470B2020561B008BD34C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828470A2020561B008BD34C /* String+Extension.swift */; };
+		5828470D20205624008BD34C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828470C20205624008BD34C /* UIColor+Extension.swift */; };
+		5828470F2020562F008BD34C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828470E2020562F008BD34C /* UIImage+Extension.swift */; };
+		5828471120205DD3008BD34C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828471020205DD3008BD34C /* UIView+Extension.swift */; };
+		5854B0B21FD8F453000D832B /* AnalysisTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0B11FD8F453000D832B /* AnalysisTool.swift */; };
 		5854B0B41FD8F4F8000D832B /* NetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0B31FD8F4F8000D832B /* NetManager.swift */; };
 		5854B0B61FD8F559000D832B /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0B51FD8F559000D832B /* IAPManager.swift */; };
-		5854B0B81FD8F946000D832B /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0B71FD8F946000D832B /* AppInfo.swift */; };
 		5854B0BD1FD9134A000D832B /* SubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0BC1FD9134A000D832B /* SubscriptionViewModel.swift */; };
 		5854B0C01FD9166D000D832B /* AboutWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0BE1FD9166D000D832B /* AboutWebViewViewController.swift */; };
 		5854B0C11FD9166D000D832B /* AboutSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0BF1FD9166D000D832B /* AboutSubscriptionViewController.swift */; };
 		5854B0C31FD916AA000D832B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0C21FD916AA000D832B /* BaseViewController.swift */; };
 		5854B0C81FD916FA000D832B /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854B0C71FD916FA000D832B /* NavigationView.swift */; };
 		585C8B151FE37C240031D1F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585C8B141FE37C240031D1F7 /* AppDelegate.swift */; };
+		585C8B651FE3D0A80031D1F7 /* FolderUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585C8B631FE3D0A70031D1F7 /* FolderUtil.swift */; };
+		585C8B661FE3D0A80031D1F7 /* ShareUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585C8B641FE3D0A70031D1F7 /* ShareUtil.swift */; };
 		5863C9D51FE286510030D809 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5863C9D41FE286510030D809 /* DataBaseManager.swift */; };
 		5863C9D71FE288280030D809 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5863C9D61FE288280030D809 /* UserModel.swift */; };
 		5863C9DA1FE2A2570030D809 /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5863C9D81FE2A2570030D809 /* image1.jpg */; };
 		5863C9DB1FE2A2570030D809 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5863C9D91FE2A2570030D809 /* image2.jpg */; };
-		586605531FCD590C0085BFEB /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586605521FCD590C0085BFEB /* NavigationViewController.swift */; };
+		586605531FCD590C0085BFEB /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586605521FCD590C0085BFEB /* BaseNavigationController.swift */; };
 		586605561FCD590C0085BFEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586605541FCD590C0085BFEB /* Main.storyboard */; };
 		586605581FCD590C0085BFEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586605571FCD590C0085BFEB /* Assets.xcassets */; };
 		5866055B1FCD590C0085BFEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586605591FCD590C0085BFEB /* LaunchScreen.storyboard */; };
@@ -61,30 +72,41 @@
 /* Begin PBXFileReference section */
 		0EC84963B89D98386A4255F8 /* Pods-iOS-DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-DemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-DemoUITests/Pods-iOS-DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		580C2BA51FD8E12D003C1DAB /* JSONUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUtil.swift; sourceTree = "<group>"; };
-		580C2BA71FD8E17F003C1DAB /* ScreenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenUtil.swift; sourceTree = "<group>"; };
 		580C2BB21FD8E85C003C1DAB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "iOS-Demo/Feature/Home/ViewController/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
 		580C2BC21FD8EAA2003C1DAB /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		580C2BC81FD8ED18003C1DAB /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		580C2BCA1FD8EDB1003C1DAB /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		580C2BCC1FD8EF1D003C1DAB /* IAPPurchaseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPPurchaseInfo.swift; sourceTree = "<group>"; };
 		580C2BCE1FD8EFB3003C1DAB /* AnalysisConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisConfig.swift; sourceTree = "<group>"; };
-		580C2BD11FD8F0CA003C1DAB /* CommonDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDefine.swift; sourceTree = "<group>"; };
-		5854B0B11FD8F453000D832B /* AnalysisUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisUtil.swift; sourceTree = "<group>"; };
+		580C2BD11FD8F0CA003C1DAB /* AppDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefine.swift; sourceTree = "<group>"; };
+		582846F920201B40008BD34C /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		582846FB20201E09008BD34C /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		582846FD20201E86008BD34C /* ImagePickerTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerTool.swift; sourceTree = "<group>"; };
+		5828470020204634008BD34C /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		582847022020463A008BD34C /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		58284706202049F2008BD34C /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		5828470820204F8A008BD34C /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		5828470A2020561B008BD34C /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		5828470C20205624008BD34C /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		5828470E2020562F008BD34C /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		5828471020205DD3008BD34C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		5854B0B11FD8F453000D832B /* AnalysisTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisTool.swift; sourceTree = "<group>"; };
 		5854B0B31FD8F4F8000D832B /* NetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetManager.swift; sourceTree = "<group>"; };
 		5854B0B51FD8F559000D832B /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
-		5854B0B71FD8F946000D832B /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		5854B0BC1FD9134A000D832B /* SubscriptionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionViewModel.swift; sourceTree = "<group>"; };
 		5854B0BE1FD9166D000D832B /* AboutWebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWebViewViewController.swift; sourceTree = "<group>"; };
 		5854B0BF1FD9166D000D832B /* AboutSubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutSubscriptionViewController.swift; sourceTree = "<group>"; };
 		5854B0C21FD916AA000D832B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5854B0C71FD916FA000D832B /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		585C8B141FE37C240031D1F7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		585C8B631FE3D0A70031D1F7 /* FolderUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderUtil.swift; sourceTree = "<group>"; };
+		585C8B641FE3D0A70031D1F7 /* ShareUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareUtil.swift; sourceTree = "<group>"; };
 		5863C9D41FE286510030D809 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		5863C9D61FE288280030D809 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5863C9D81FE2A2570030D809 /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
 		5863C9D91FE2A2570030D809 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
 		5866054D1FCD590C0085BFEB /* iOS-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		586605521FCD590C0085BFEB /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		586605521FCD590C0085BFEB /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		586605551FCD590C0085BFEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		586605571FCD590C0085BFEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5866055A1FCD590C0085BFEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -146,6 +168,8 @@
 		580C2BA11FD8E0CB003C1DAB /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				58284705202049DA008BD34C /* Extensions */,
+				582846FF2020256D008BD34C /* Tools */,
 				580C2BA41FD8E108003C1DAB /* Utils */,
 			);
 			path = Public;
@@ -154,11 +178,10 @@
 		580C2BA41FD8E108003C1DAB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5854B0B51FD8F559000D832B /* IAPManager.swift */,
-				5854B0B31FD8F4F8000D832B /* NetManager.swift */,
-				5854B0B11FD8F453000D832B /* AnalysisUtil.swift */,
-				580C2BA71FD8E17F003C1DAB /* ScreenUtil.swift */,
+				582846FB20201E09008BD34C /* DateUtil.swift */,
+				585C8B631FE3D0A70031D1F7 /* FolderUtil.swift */,
 				580C2BA51FD8E12D003C1DAB /* JSONUtil.swift */,
+				585C8B641FE3D0A70031D1F7 /* ShareUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -228,14 +251,39 @@
 		580C2BC71FD8ED05003C1DAB /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				580C2BC81FD8ED18003C1DAB /* AppSettings.swift */,
-				580C2BCA1FD8EDB1003C1DAB /* ApiConfig.swift */,
-				5854B0B71FD8F946000D832B /* AppInfo.swift */,
-				580C2BCC1FD8EF1D003C1DAB /* IAPPurchaseInfo.swift */,
 				580C2BCE1FD8EFB3003C1DAB /* AnalysisConfig.swift */,
-				580C2BD11FD8F0CA003C1DAB /* CommonDefine.swift */,
+				580C2BCA1FD8EDB1003C1DAB /* ApiConfig.swift */,
+				580C2BC81FD8ED18003C1DAB /* AppSettings.swift */,
+				580C2BD11FD8F0CA003C1DAB /* AppDefine.swift */,
+				580C2BCC1FD8EF1D003C1DAB /* IAPPurchaseInfo.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		582846FF2020256D008BD34C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				5828470020204634008BD34C /* AppInfo.swift */,
+				582847022020463A008BD34C /* DeviceInfo.swift */,
+				582846FD20201E86008BD34C /* ImagePickerTool.swift */,
+				5854B0B11FD8F453000D832B /* AnalysisTool.swift */,
+				5854B0B51FD8F559000D832B /* IAPManager.swift */,
+				5854B0B31FD8F4F8000D832B /* NetManager.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		58284705202049DA008BD34C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5828470E2020562F008BD34C /* UIImage+Extension.swift */,
+				5828470C20205624008BD34C /* UIColor+Extension.swift */,
+				5828470A2020561B008BD34C /* String+Extension.swift */,
+				58284706202049F2008BD34C /* UIDevice+Extension.swift */,
+				5828470820204F8A008BD34C /* UIScreen+Extension.swift */,
+				5828471020205DD3008BD34C /* UIView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		5854B0B91FD9130E000D832B /* Purchase */ = {
@@ -276,7 +324,8 @@
 		5854B0C51FD916D5000D832B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				586605521FCD590C0085BFEB /* NavigationViewController.swift */,
+				582846F920201B40008BD34C /* BaseNavigationViewController.swift */,
+				586605521FCD590C0085BFEB /* BaseNavigationController.swift */,
 				5854B0C21FD916AA000D832B /* BaseViewController.swift */,
 			);
 			path = ViewController;
@@ -453,6 +502,11 @@
 					5866054C1FCD590C0085BFEB = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					586605601FCD590C0085BFEB = {
 						CreatedOnToolsVersion = 9.1;
@@ -704,27 +758,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5828471120205DD3008BD34C /* UIView+Extension.swift in Sources */,
 				5854B0B61FD8F559000D832B /* IAPManager.swift in Sources */,
 				580C2BCF1FD8EFB3003C1DAB /* AnalysisConfig.swift in Sources */,
 				5854B0C81FD916FA000D832B /* NavigationView.swift in Sources */,
-				5854B0B81FD8F946000D832B /* AppInfo.swift in Sources */,
+				585C8B661FE3D0A80031D1F7 /* ShareUtil.swift in Sources */,
 				5863C9D51FE286510030D809 /* DataBaseManager.swift in Sources */,
 				580C2BB31FD8E85C003C1DAB /* HomeViewController.swift in Sources */,
 				5854B0C31FD916AA000D832B /* BaseViewController.swift in Sources */,
 				580C2BC31FD8EAA2003C1DAB /* LaunchViewController.swift in Sources */,
+				5828470D20205624008BD34C /* UIColor+Extension.swift in Sources */,
 				5854B0B41FD8F4F8000D832B /* NetManager.swift in Sources */,
-				5854B0B21FD8F453000D832B /* AnalysisUtil.swift in Sources */,
+				5854B0B21FD8F453000D832B /* AnalysisTool.swift in Sources */,
 				5863C9D71FE288280030D809 /* UserModel.swift in Sources */,
+				5828470920204F8A008BD34C /* UIScreen+Extension.swift in Sources */,
 				5854B0C11FD9166D000D832B /* AboutSubscriptionViewController.swift in Sources */,
+				58284707202049F2008BD34C /* UIDevice+Extension.swift in Sources */,
+				5828470120204634008BD34C /* AppInfo.swift in Sources */,
+				582846FA20201B40008BD34C /* BaseNavigationViewController.swift in Sources */,
 				5854B0BD1FD9134A000D832B /* SubscriptionViewModel.swift in Sources */,
 				585C8B151FE37C240031D1F7 /* AppDelegate.swift in Sources */,
+				582846FE20201E86008BD34C /* ImagePickerTool.swift in Sources */,
 				580C2BC91FD8ED18003C1DAB /* AppSettings.swift in Sources */,
-				586605531FCD590C0085BFEB /* NavigationViewController.swift in Sources */,
+				586605531FCD590C0085BFEB /* BaseNavigationController.swift in Sources */,
+				582847032020463A008BD34C /* DeviceInfo.swift in Sources */,
 				5854B0C01FD9166D000D832B /* AboutWebViewViewController.swift in Sources */,
-				580C2BD21FD8F0CA003C1DAB /* CommonDefine.swift in Sources */,
-				580C2BA81FD8E17F003C1DAB /* ScreenUtil.swift in Sources */,
+				580C2BD21FD8F0CA003C1DAB /* AppDefine.swift in Sources */,
+				585C8B651FE3D0A80031D1F7 /* FolderUtil.swift in Sources */,
 				580C2BA61FD8E12D003C1DAB /* JSONUtil.swift in Sources */,
+				5828470F2020562F008BD34C /* UIImage+Extension.swift in Sources */,
+				582846FC20201E09008BD34C /* DateUtil.swift in Sources */,
 				580C2BCB1FD8EDB1003C1DAB /* ApiConfig.swift in Sources */,
+				5828470B2020561B008BD34C /* String+Extension.swift in Sources */,
 				580C2BCD1FD8EF1D003C1DAB /* IAPPurchaseInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
