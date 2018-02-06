@@ -16,6 +16,7 @@
 		580C2BCD1FD8EF1D003C1DAB /* IAPPurchaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BCC1FD8EF1D003C1DAB /* IAPPurchaseInfo.swift */; };
 		580C2BCF1FD8EFB3003C1DAB /* AnalysisConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BCE1FD8EFB3003C1DAB /* AnalysisConfig.swift */; };
 		580C2BD21FD8F0CA003C1DAB /* AppDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2BD11FD8F0CA003C1DAB /* AppDefine.swift */; };
+		5813FF63202953040093F4E5 /* PermissionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813FF62202953040093F4E5 /* PermissionTool.swift */; };
 		582846FA20201B40008BD34C /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582846F920201B40008BD34C /* BaseNavigationViewController.swift */; };
 		582846FC20201E09008BD34C /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582846FB20201E09008BD34C /* DateUtil.swift */; };
 		582846FE20201E86008BD34C /* ImagePickerTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582846FD20201E86008BD34C /* ImagePickerTool.swift */; };
@@ -79,6 +80,7 @@
 		580C2BCC1FD8EF1D003C1DAB /* IAPPurchaseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPPurchaseInfo.swift; sourceTree = "<group>"; };
 		580C2BCE1FD8EFB3003C1DAB /* AnalysisConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisConfig.swift; sourceTree = "<group>"; };
 		580C2BD11FD8F0CA003C1DAB /* AppDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefine.swift; sourceTree = "<group>"; };
+		5813FF62202953040093F4E5 /* PermissionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionTool.swift; sourceTree = "<group>"; };
 		582846F920201B40008BD34C /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		582846FB20201E09008BD34C /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		582846FD20201E86008BD34C /* ImagePickerTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerTool.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		582846FF2020256D008BD34C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				5813FF62202953040093F4E5 /* PermissionTool.swift */,
 				5828470020204634008BD34C /* AppInfo.swift */,
 				582847022020463A008BD34C /* DeviceInfo.swift */,
 				582846FD20201E86008BD34C /* ImagePickerTool.swift */,
@@ -768,6 +771,7 @@
 				5854B0C31FD916AA000D832B /* BaseViewController.swift in Sources */,
 				580C2BC31FD8EAA2003C1DAB /* LaunchViewController.swift in Sources */,
 				5828470D20205624008BD34C /* UIColor+Extension.swift in Sources */,
+				5813FF63202953040093F4E5 /* PermissionTool.swift in Sources */,
 				5854B0B41FD8F4F8000D832B /* NetManager.swift in Sources */,
 				5854B0B21FD8F453000D832B /* AnalysisTool.swift in Sources */,
 				5863C9D71FE288280030D809 /* UserModel.swift in Sources */,
